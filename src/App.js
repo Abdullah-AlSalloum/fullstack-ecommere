@@ -1,10 +1,19 @@
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Header from "./components/Header";
+
 
 function App() {
   return (
     <>
-      <h1 className='text-danger'>Abdullah Al Salloum</h1>
+      <BrowserRouter>
+      <Header />
+        <Routes>
+          <Route path="/" exact={true} element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
