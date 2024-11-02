@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 *{
   margin: 0px;
   padding: 0px;
@@ -12,13 +13,20 @@ body{
 .bg-blue{
   background: #233a95;
 }
+
+@media(min-width:1300px){
+  .container, .container-lg, .container-md, .container.sm, .container-xl{
+    max-width: 1200px;
+  } 
+}
+
 .headerWrapper .top-strip{
   padding: 8px 0px;
 }
 
 .headerWrapper .top-strip p{color: #fff; font-size: 12px;}
 
-.headerWrapper .header{width: 100%; height: auto; padding: 15px 0px;}
+.headerWrapper .header{width: 100%; height: auto; padding: 25px 0px;}
 .logoWrapper img{width: 100%;}
 
 .headerWrapper .header .part2 .countryDrop{
@@ -112,3 +120,33 @@ header .part3 .circle svg{font-size: 22px;}
   width: 20px;
   height: 20px;
 }
+
+
+nav .allCatTab{
+  background: #2bbef9;
+  padding: 10px 15px !important;
+  border-radius: 30px !important;
+}
+
+nav .allCatTab *{color: #fff;}
+nav .allCatTab:hover{background: #2bbef9;}
+nav .allCatTab .text{font-weight: 600;}
+nav .allCatTab .icon1 svg{font-size: 20px !important;}
+nav .allCatTab .icon2 svg{font-size: 15px !important;}
+nav .navPart2 ul{margin-bottom: 0px;}
+nav .navPart2 ul li a{
+  font-size: 15px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+nav .navPart2 ul li a svg{font-size: 18px;}
+nav .navPart2 ul li a:hover{background: #f0faff; color: #2bbef9;}
+
