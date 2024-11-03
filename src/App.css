@@ -24,6 +24,8 @@ body{
 ::-webkit-scrollbar-thumb{background: #ccc !important;}
 ::-webkit-scrollbar-track{background: transparent !important;}
 
+.headerWrapper{border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 10px;}
+
 .headerWrapper .top-strip{
   padding: 8px 0px;
 }
@@ -141,7 +143,9 @@ header .part3 .circle svg{font-size: 22px;}
   justify-content: flex-start !important;
   padding: 15px 20px !important;
 }
-.locationModel .close_{
+.locationModel .countryList li button:hover{background: #f1f1f1;}
+.locationModel .countryList li button.active{background: #e2e2e2 !important;}
+.locationModel .close_{   
   position: absolute; 
   top: 3px; 
   right: 2px; 
