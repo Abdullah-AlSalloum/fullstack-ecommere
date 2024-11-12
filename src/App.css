@@ -8,9 +8,22 @@
   padding: 0px;
 }
 
+.cursor{
+  cursor: pointer;
+}
+
+.text-light{
+  color: #8b8b8b !important;
+}
+
+.text-sml{
+  font-size: 14px;
+}
+
 body {
   font-family: "lato", sans-serif;
   font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .bg-blue {
@@ -254,7 +267,7 @@ nav .navPart1 .catWrapper .sidebarNav.open {
   visibility: inherit;
 }
 
-nav .navPart1 .catWrapper .sidebarNav li {
+nav .navPart1 .catWrapper .sidebarNav ul li {
   width: 100%;
   list-style: none;
   padding: 0px 15px;
@@ -266,9 +279,42 @@ nav .navPart1 .catWrapper .sidebarNav li button {
   justify-content: flex-start;
   text-transform: capitalize !important;
 }
+nav .navPart1 .catWrapper .sidebarNav ul li button svg{
+  font-size: 12px;
+  opacity: 0.6;
+}
 
 nav .navPart1 .catWrapper .sidebarNav li button:hover {
   background: transparent !important;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li{
+  position: static;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li .submenu{
+  position: absolute;
+  top: 0;
+  left: 102%;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu{
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu button{
+  border-radius: 0px !important;
+
 }
 
 nav .navPart2 {
@@ -411,3 +457,20 @@ nav .navPart2 ul li:hover .submenu {
   font-family: FontAwesome !important;
   color: #fff;
 }
+
+.homeProducts{
+  padding: 25px 0px;
+  width: 100%;
+}
+
+.homeProducts .banner{
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.productRow .hd{
+  font-size: 25px;
+  font-weight: 600;
+}
+
