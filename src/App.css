@@ -470,7 +470,107 @@ nav .navPart2 ul li:hover .submenu {
 }
 
 .productRow .hd{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
 }
 
+.viewAllBtn{
+  padding: 5px 25px !important;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 30px !important;
+  color: #414141 !important;
+  font-weight: 600;
+  text-transform: capitalize !important;
+}
+.viewAllBtn svg{font-size: 20px;}
+
+.productItem{
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  position: relative;
+}
+
+.productItem .badge{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 8px 15px;
+  z-index: 100;
+}
+
+.badge-primary{background: #2bbef9 !important;}
+.productItem .info{
+  padding: 15px;
+}
+.productItem .action{
+  position: absolute;
+  top: 20px;
+  right: -100px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.productItem .action Button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px !important;
+  height: 40px !important;
+  width: 40px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  box-shadow: 0 1px 3px rgb(0 0 0 /12%), 0 1px 2px rgb(0 0 0 /24%) !important;
+  transition: all 0.0s !important;
+}
+
+.productItem .action Button svg{
+  color: #000 !important;
+  opacity: 0.7;
+  pointer-events: none;
+  font-size: 16px;
+}
+.productItem .action Button:hover{
+  background: #233a95 !important;
+}
+.productItem .action Button:hover svg{
+  color: #fff !important;
+}
+
+.productItem .info h2{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.productItem .imgWrapper{
+  overflow: hidden;
+}
+.productItem .imgWrapper img{
+  transition: all 0.3s ease-in-out;
+}
+.productItem .imgWrapper:hover img{
+  transform: scale(1.1);
+}
+.productItem .imgWrapper:hover .action{
+  opacity: 1;
+  right: 10px;
+}
+
+.productItem .info .oldPrice{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: line-through;
+}
+.productItem .info .newPrice{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper{
+  padding-right: 1px !important;
+}
