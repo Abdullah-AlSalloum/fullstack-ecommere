@@ -14,18 +14,12 @@ import { Navigation } from "swiper/modules";
 import ProductItem from "../../components/ProductItem";
 import HomeCat from "../../components/HomeCat";
 import { IoMailOutline } from "react-icons/io5";
+import Footer from "../../components/Footer";
 
 
 
 
 function Home() {
-  var productSliderOptions = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1
-  };
 
   return (
     <>
@@ -37,12 +31,12 @@ function Home() {
           <div className="row">
             <div className="col-md-3">
               <div className="sticky">
-              <div className="banner">
-                <img src={banner1} alt="banner1" className="cursor w-100" />
-              </div>
-              <div className="banner mt-4">
-                <img src={banner2} alt="banner2" className="cursor w-100" />
-              </div>
+                <div className="banner">
+                  <img src={banner1} alt="banner1" className="cursor w-100" />
+                </div>
+                <div className="banner mt-4">
+                  <img src={banner2} alt="banner2" className="cursor w-100" />
+                </div>
               </div>
             </div>
             <div className="col-md-9 productRow">
@@ -57,13 +51,13 @@ function Home() {
 
 
               <div className="product_row w-100 mt-4">
-              <Swiper
-                    slidesPerView={4}
-                    spaceBetween={10}
-                    navigation={true}
-                    slidesPerGroup={3}
-                    modules={[Navigation]}
-                    className="mySwiper"
+                <Swiper
+                  slidesPerView={4}
+                  spaceBetween={10}
+                  navigation={true}
+                  slidesPerGroup={3}
+                  modules={[Navigation]}
+                  className="mySwiper"
                 >
                   <SwiperSlide>
                     <ProductItem />
@@ -99,25 +93,25 @@ function Home() {
 
 
               <div className="product_row productRow2 w-100 mt-4 d-flex">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
 
               </div>
 
               <div className="d-flex mt-4 mb-5 bannerSec">
-              <div className="banner mt-4">
-                <img src={banner3} alt="banner3" className="cursor w-100" />
-              </div>
+                <div className="banner mt-4">
+                  <img src={banner3} alt="banner3" className="cursor w-100" />
+                </div>
 
-              <div className="banner mt-4">
-                <img src={banner4} alt="banner4" className="cursor w-100" />
-              </div>
+                <div className="banner mt-4">
+                  <img src={banner4} alt="banner4" className="cursor w-100" />
+                </div>
               </div>
             </div>
           </div>
@@ -130,17 +124,17 @@ function Home() {
             <div className="col-md-6">
               <p className="text-white mb-1">$20 discount for your first order.</p>
               <h3 className="text-white">join our newsletter and get...</h3>
-              <p className="text-light">Join our email subsecription now and get update on 
-                <br/>promotions and coupons.</p>
+              <p className="text-light">Join our email subsecription now and get update on
+                <br />promotions and coupons.</p>
 
-                <form>
-                  <IoMailOutline />
-                  <input type="email" placeholder="Your Email Address"/>
-                  <Button>Sebsecribe</Button>
-                </form>
+              <form>
+                <IoMailOutline />
+                <input type="email" placeholder="Your Email Address" />
+                <Button>Sebsecribe</Button>
+              </form>
             </div>
             <div className="col-md-6">
-                <img src={newsLetterImg} alt="coupon"/>
+              <img src={newsLetterImg} alt="coupon" />
             </div>
           </div>
         </div>
