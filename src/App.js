@@ -31,7 +31,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/fullstack-ecommere">
         <MyContext.Provider value={value}>
           <Header />
           <Routes>
