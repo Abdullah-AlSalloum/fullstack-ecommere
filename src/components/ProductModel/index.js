@@ -12,12 +12,6 @@ import { MdOutlineCompareArrows } from "react-icons/md";
 import { MyContext } from "../../App";
 
 
-
-
-
-
-
-
 function ProductModel(props) {
 
     const zoomSliderBig = useRef();
