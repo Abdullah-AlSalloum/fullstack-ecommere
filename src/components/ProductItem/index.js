@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Rating from '@mui/material/Rating';
 import { SlSizeFullscreen } from "react-icons/sl";
 import Button from "@mui/material/Button";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { MyContext } from "../../App";
 
 
 
 
 function ProductItem(){
+  
+  const context = useContext(MyContext)
+
+  function viewProductDetails(id){
+    context.setIsOpenProductModel(true);
+  }
     return(
+       <>
         <div className="item productItem">
                     <div className="imgWrapper">
                       <img src="https://mahnam.co/home/images/Product-category/nodel/nodel-chicken-mahnam.jpg" alt="" className="w-100"/>
                       <span className="badge badge-primary">20%</span>
                       <div className="action">
-                        <Button><SlSizeFullscreen /></Button>
+                        <Button onClick={()=>viewProductDetails(1)}><SlSizeFullscreen /></Button>
                         <Button><IoMdHeartEmpty style={{fontSize: '20px'}} /></Button>
                       </div>
                     </div>
@@ -27,7 +35,8 @@ function ProductItem(){
                       <span className="newPrice text-danger ml-3">$13.00</span>
                     </div>
                     </div>
-                  </div>
+                  </div>          
+       </>
     )
 }
 
