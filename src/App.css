@@ -926,10 +926,6 @@ footer .copyright ul li a:hover svg {
 
 }
 
-.zoomSlider .slick-slide {
-  padding-right: 20px !important;
-}
-
 .zoomSlider * {
   outline: none !important;
 }
@@ -940,22 +936,19 @@ footer .copyright ul li a:hover svg {
   border-radius: 15px;
   cursor: pointer;
 }
-
-.zoomSlider .slick-current .item {
-  border: 2px solid #3bb77e !important;
+.zoomSlider .item_active{
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-.zoomSlider .slick-arrow {
-  top: 55% !important;
-  zoom: 80% !important;
+.zoomSlider .swiper-button-prev{
+  width: 30px !important;
+  height: 30px !important;
+  top: 60% !important;
 }
-
-.zoomSlider .slick-arrow.slick-next {
-  right: -2% !important;
-}
-
-.zoomSlider .slick-arrow.slick-prev {
-  left: -5% !important;
+.zoomSlider .swiper-button-next{
+  width: 30px !important;
+  height: 30px !important;
+  top: 60% !important;
 }
 
 .quantityDrop{
@@ -988,4 +981,20 @@ footer .copyright ul li a:hover svg {
 
 .productModel .actions button svg{
   font-size: 15px !important;
+}
+
+
+/* ============ sideBar and the Listing page ==================== */
+
+.product_Listing_Page .productListing{
+  gap: 20px;
+}
+.product_Listing_Page .productListing .sidebar{
+  width: 20%;
+  flex: 0 0 20%;
+}
+
+.product_Listing_Page .productListing .content_right{
+  width: 80%;
+  flex: 0 0 80%;
 }

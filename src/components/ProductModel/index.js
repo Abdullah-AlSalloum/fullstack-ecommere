@@ -1,45 +1,29 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { IoMdClose } from "react-icons/io";
 import Rating from '@mui/material/Rating';
-import Slider from "react-slick";
-import InnerImageZoom from "react-inner-image-zoom";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import QuantityBox from "../QuantityBox";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { MyContext } from "../../App";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import InnerImageZoom from "react-inner-image-zoom";
 
 
 function ProductModel(props) {
 
+    const [sliderIndex, setSliderIndex] = useState(0);
     const zoomSliderBig = useRef();
     const zoomSlider = useRef();
     const context = useContext(MyContext);
-    var settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        fade: false,
-        arrows: true
-    };
 
-
-    var settings2 = {
-        dots : false,
-        infinite : false,
-        speed : 700,
-        slidesToShow : 1,
-        slidesToScroll: 1,
-        fade: false,
-        arrows: false
-    }
-    function goto(index){
-        zoomSlider.current.slickGoTo(index);
-        zoomSliderBig.current.slickGoTo(index);
+    function goto(index) {
+        setSliderIndex(index);
+        zoomSlider.current.swiper.slideTo(index);
+        zoomSliderBig.current.swiper.slideTo(index);
     }
 
     return (
@@ -60,48 +44,96 @@ function ProductModel(props) {
                     <div className="col-md-5">
                         <div className="productZoom">
                             <div className="badge badge-primary">28%</div>
-                            <Slider {...settings2} className="zoomSliderBig" ref={zoomSliderBig}>
-                                <div className="item">
-                                    <InnerImageZoom
-                                        zoomType="hover" zoomScale={1}
-                                        src={`https://ardenmarket.com.tr/media/catalog/product/cache/ce320e98947e5c83f08a8e256dc8423e/n/e/nestle_corn_flakes_m_s_r_gevre_i_450_g.jpg`}
-                                    />
-                                </div>
-                                <div className="item">
-                                    <InnerImageZoom
-                                        zoomType="hover" zoomScale={1}
-                                        src={`https://images.migrosone.com/sanalmarket/product/05039577/05039577-dbd7d9-1650x1650.jpg`}
-                                    />
-                                </div>
-                                <div className="item">
-                                    <InnerImageZoom
-                                        zoomType="hover" zoomScale={1}
-                                        src={`https://ardenmarket.com.tr/media/catalog/product/cache/ce320e98947e5c83f08a8e256dc8423e/n/e/nestle_corn_flakes_m_s_r_gevre_i_450_g.jpg`}
-                                    />
-                                </div>
-                                
-                            </Slider>
-                        </div>
-                        <Slider {...settings} className="zoomSlider" ref={zoomSlider}>
+                            <Swiper
+                                slidesPerView={1}
+                                spaceBetween={0}
+                                navigation={false}
+                                slidesPerGroup={1}
+                                modules={[Navigation]}
+                                className="zoomSliderBig"
+                                ref={zoomSliderBig}
+                            >
+                                <SwiperSlide>
+                                    <div className="item">
+                                        <InnerImageZoom
+                                            zoomType="hover"
+                                            zoomScale={1}
+                                            src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        >
+                                        </InnerImageZoom>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="item">
+                                        <InnerImageZoom
+                                            zoomType="hover"
+                                            zoomScale={1}
+                                            src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        >
+                                        </InnerImageZoom>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="item">
+                                        <InnerImageZoom
+                                            zoomType="hover"
+                                            zoomScale={1}
+                                            src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        >
+                                        </InnerImageZoom>
+                                    </div>
+                                </SwiperSlide>
 
-                                <div className="item">
-                                    <img src={`https://ardenmarket.com.tr/media/catalog/product/cache/ce320e98947e5c83f08a8e256dc8423e/n/e/nestle_corn_flakes_m_s_r_gevre_i_450_g.jpg`}
-                                    className="w-100"
-                                   alt="" onClick={() => goto(0)} />
+                            </Swiper>
+                        </div>
+                        <Swiper
+                            slidesPerView={4}
+                            spaceBetween={0}
+                            navigation={true}
+                            slidesPerGroup={1}
+                            modules={[Navigation]}
+                            className="zoomSlider"
+                            ref={zoomSlider}
+                        >
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 0 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(0)} alt="" />
                                 </div>
-                                
-                                <div className="item">
-                                    <img src={`https://images.migrosone.com/sanalmarket/product/05039577/05039577-dbd7d9-1650x1650.jpg`}
-                                    className="w-100"
-                                   alt="" onClick={() => goto(1)} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 1 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(1)} alt="" />
                                 </div>
-                                <div className="item">
-                                    <img src={`https://ardenmarket.com.tr/media/catalog/product/cache/ce320e98947e5c83f08a8e256dc8423e/n/e/nestle_corn_flakes_m_s_r_gevre_i_450_g.jpg`}
-                                    className="w-100"
-                                   alt="" onClick={() => goto(2)} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 2 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(2)} alt="" />
                                 </div>
-                                
-                            </Slider>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 3 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(3)} alt="" />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 4 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(4)} alt="" />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className={`item ${sliderIndex === 5 && 'item_active'}`}>
+                                    <img src={`https://klbtheme.com/bacola/wp-content/uploads/2021/04/product-image-62.jpg`}
+                                        className="w-100" onClick={() => goto(5)} alt="" />
+                                </div>
+                            </SwiperSlide>
+
+
+                        </Swiper>
 
                     </div>
                     <div className="col-md-7">
@@ -111,7 +143,7 @@ function ProductModel(props) {
                         </div>
                         <span className="badge bg-success">IN STOCK</span>
                         <p className="mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 
                         <div className="d-flex align-items-center">
                             <QuantityBox />
@@ -122,7 +154,7 @@ function ProductModel(props) {
                         <div className="d-flex align-items-center mt-5 actions">
                             <Button className="btn-round btn-sml" variant="outlined">
                                 <IoIosHeartEmpty /> &nbsp; Add To Wishlist</Button>
-                                <Button className="btn-round btn-sml ml-3" variant="outlined">
+                            <Button className="btn-round btn-sml ml-3" variant="outlined">
                                 <MdOutlineCompareArrows /> &nbsp; Compare</Button>
                         </div>
 
