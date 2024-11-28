@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fullstack-ecommere/static/css/main.7ee17c56.css",
+    "main.css": "/fullstack-ecommere/static/css/main.32c14f74.css",
     "main.js": "/fullstack-ecommere/static/js/main.7d17dad7.js",
     "static/media/banner2.png": "/fullstack-ecommere/static/media/banner2.c5a278c8431271c23260.png",
     "static/media/banner1.png": "/fullstack-ecommere/static/media/banner1.91a08611697de77dee61.png",
@@ -9,11 +9,11 @@
     "static/media/banner3.jpg": "/fullstack-ecommere/static/media/banner3.78a3b8a8eeffb023654b.jpg",
     "static/media/banner4.jpg": "/fullstack-ecommere/static/media/banner4.2a8b12fc197a89263e82.jpg",
     "index.html": "/fullstack-ecommere/index.html",
-    "main.7ee17c56.css.map": "/fullstack-ecommere/static/css/main.7ee17c56.css.map",
+    "main.32c14f74.css.map": "/fullstack-ecommere/static/css/main.32c14f74.css.map",
     "main.7d17dad7.js.map": "/fullstack-ecommere/static/js/main.7d17dad7.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ee17c56.css",
+    "static/css/main.32c14f74.css",
     "static/js/main.7d17dad7.js"
   ]
 }
